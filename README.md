@@ -8,7 +8,7 @@ The Hexarc Serialization project provides additional converters for the `System.
 [![Downloads](http://img.shields.io/nuget/dt/Hexarc.Serialization.Union.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Union)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://badges.mit-license.org)
 
-The `Hexarc.Serialization.Union` package helps to serialize .NET/C# classes as a tagged union (also known as discriminated union).
+The `Hexarc.Serialization.Union` package helps to serialize .NET/C# classes hierarchy as a tagged union (also known as a discriminated union).
 
 ### A tagged union example
 ```c#
