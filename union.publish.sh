@@ -1,6 +1,6 @@
 #!/bin/sh
 source .env
-PACKAGE="Hexarc.Serialization.Union.1.0.0.nupkg"
+PACKAGE="Hexarc.Serialization.Union.1.0.1.nupkg"
 
 if [ -z $NUGET_API_KEY ]; then
   echo "No NUGET_API_KEY found in .env file";
