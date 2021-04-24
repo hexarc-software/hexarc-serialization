@@ -2,23 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <Nullable>Enable</Nullable>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Hexarc.Annotations" Version="[1.2.0,2.0)" />
-  </ItemGroup>
-
   <PropertyGroup>
-    <PackageId>Hexarc.Serialization.Union</PackageId>
-    <Version>1.0.3</Version>
+    <PackageId>Hexarc.Serialization.Tuple</PackageId>
+    <Version>1.0.0</Version>
     <Authors>Max Koverdyaev</Authors>
     <Company>Hexarc Software</Company>
-    <PackageTags>Tagged Union;Discriminated Union;Serialization;Json</PackageTags>
+    <PackageTags>Tuple;Serialization;Json</PackageTags>
     <PackageProjectUrl>https://github.com/hexarc-software/hexarc-serialization</PackageProjectUrl>
     <RepositoryUrl>https://github.com/hexarc-software/hexarc-serialization</RepositoryUrl>
     <Description>
-      This package helps to serialize .NET/C# classes hierarchy as a tagged union (also known as a discriminated union).
+      This package helps to serialize .NET/C# System.ValueTuple types.
     </Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>hexarc.png</PackageIcon>
