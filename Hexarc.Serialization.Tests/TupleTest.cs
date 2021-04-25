@@ -142,6 +142,16 @@ namespace Hexarc.Serialization.Tests
         }
 
         [Test]
+        public void ReadNestedTuple()
+        {
+            var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
+            var expected = (1, 2, 3, 4, 5, 6, 7, 8, (1, 2, 3, 4, 5, 6, (1, 2, 3)));
+            var raw = "[1,2,3,4,5,6,7,8,[1,2,3,4,5,6,[1,2,3]]]";
+            var produced = JsonSerializer.Deserialize<(Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32, (Int32, Int32, Int32, Int32, Int32, Int32, (Int32, Int32, Int32)))>(raw, options);
+            Assert.AreEqual(expected, produced);
+        }
+
+        [Test]
         public void WriteTupleT1()
         {
             var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
@@ -274,6 +284,16 @@ namespace Hexarc.Serialization.Tests
             var value = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
             var raw = JsonSerializer.Serialize(value, options);
             Console.WriteLine(raw);
+        }
+
+        [Test]
+        public void WriteNestedTuple()
+        {
+            var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
+            var value = (1, 2, 3, 4, 5, 6, 7, 8, (1, 2, 3, 4, 5, 6, (1, 2, 3)));
+            var expected = "[1,2,3,4,5,6,7,8,[1,2,3,4,5,6,[1,2,3]]]";
+            var actual = JsonSerializer.Serialize(value, options);
+            Assert.AreEqual(expected, actual);
         }
     }
 }
