@@ -152,6 +152,17 @@ namespace Hexarc.Serialization.Tests
         }
 
         [Test]
+        public void ReadTupleWithNullables()
+        {
+            var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
+            var expected = (1, default(String), default(Int32?));
+            var raw = "[1,null,null]";
+            var produced = JsonSerializer.Deserialize<(Int32, String?, Int32?)>(raw, options);
+            Assert.AreEqual(expected, produced);
+            Console.WriteLine(produced);
+        }
+
+        [Test]
         public void WriteTupleT1()
         {
             var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
@@ -294,6 +305,17 @@ namespace Hexarc.Serialization.Tests
             var expected = "[1,2,3,4,5,6,7,8,[1,2,3,4,5,6,[1,2,3]]]";
             var actual = JsonSerializer.Serialize(value, options);
             Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void WriteTupleWithNullables()
+        {
+            var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
+            var value = (1, default(String), default(Int32?));
+            var expected = "[1,null,null]";
+            var actual = JsonSerializer.Serialize(value, options);
+            Assert.AreEqual(expected, actual);
+            Console.WriteLine(actual);
         }
     }
 }
