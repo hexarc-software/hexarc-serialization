@@ -9,9 +9,9 @@ namespace Hexarc.Serialization.Tuple
             this ref Utf8JsonReader reader,
             JsonSerializerOptions options)
         {
-            reader.ReadArrayStart();
+            reader.ReadStartArray();
             var t1 = reader.ReadTupleFirstItem<T1>(options);
-            reader.ReadArrayEnd();
+            reader.ReadEndArray();
             return new ValueTuple<T1>(t1);
         }
 
@@ -19,10 +19,10 @@ namespace Hexarc.Serialization.Tuple
             this ref Utf8JsonReader reader,
             JsonSerializerOptions options)
         {
-            reader.ReadArrayStart();
+            reader.ReadStartArray();
             var t1 = reader.ReadTupleFirstItem<T1>(options);
             var t2 = reader.ReadTupleNotFirsItem<T2>(options);
-            reader.ReadArrayEnd();
+            reader.ReadEndArray();
             return new ValueTuple<T1, T2>(t1, t2);
         }
 
@@ -30,11 +30,11 @@ namespace Hexarc.Serialization.Tuple
             this ref Utf8JsonReader reader,
             JsonSerializerOptions options)
         {
-            reader.ReadArrayStart();
+            reader.ReadStartArray();
             var t1 = reader.ReadTupleFirstItem<T1>(options);
             var t2 = reader.ReadTupleNotFirsItem<T2>(options);
             var t3 = reader.ReadTupleNotFirsItem<T3>(options);
-            reader.ReadArrayEnd();
+            reader.ReadEndArray();
             return new ValueTuple<T1, T2, T3>(t1, t2, t3);
         }
 
@@ -42,12 +42,12 @@ namespace Hexarc.Serialization.Tuple
             this ref Utf8JsonReader reader,
             JsonSerializerOptions options)
         {
-            reader.ReadArrayStart();
+            reader.ReadStartArray();
             var t1 = reader.ReadTupleFirstItem<T1>(options);
             var t2 = reader.ReadTupleNotFirsItem<T2>(options);
             var t3 = reader.ReadTupleNotFirsItem<T3>(options);
             var t4 = reader.ReadTupleNotFirsItem<T4>(options);
-            reader.ReadArrayEnd();
+            reader.ReadEndArray();
             return new ValueTuple<T1, T2, T3, T4>(t1, t2, t3, t4);
         }
 
@@ -55,13 +55,13 @@ namespace Hexarc.Serialization.Tuple
             this ref Utf8JsonReader reader,
             JsonSerializerOptions options)
         {
-            reader.ReadArrayStart();
+            reader.ReadStartArray();
             var t1 = reader.ReadTupleFirstItem<T1>(options);
             var t2 = reader.ReadTupleNotFirsItem<T2>(options);
             var t3 = reader.ReadTupleNotFirsItem<T3>(options);
             var t4 = reader.ReadTupleNotFirsItem<T4>(options);
             var t5 = reader.ReadTupleNotFirsItem<T5>(options);
-            reader.ReadArrayEnd();
+            reader.ReadEndArray();
             return new ValueTuple<T1, T2, T3, T4, T5>(t1, t2, t3, t4, t5);
         }
 
@@ -69,14 +69,14 @@ namespace Hexarc.Serialization.Tuple
             this ref Utf8JsonReader reader,
             JsonSerializerOptions options)
         {
-            reader.ReadArrayStart();
+            reader.ReadStartArray();
             var t1 = reader.ReadTupleFirstItem<T1>(options);
             var t2 = reader.ReadTupleNotFirsItem<T2>(options);
             var t3 = reader.ReadTupleNotFirsItem<T3>(options);
             var t4 = reader.ReadTupleNotFirsItem<T4>(options);
             var t5 = reader.ReadTupleNotFirsItem<T5>(options);
             var t6 = reader.ReadTupleNotFirsItem<T6>(options);
-            reader.ReadArrayEnd();
+            reader.ReadEndArray();
             return new ValueTuple<T1, T2, T3, T4, T5, T6>(t1, t2, t3, t4, t5, t6);
         }
 
@@ -84,7 +84,7 @@ namespace Hexarc.Serialization.Tuple
             this ref Utf8JsonReader reader,
             JsonSerializerOptions options)
         {
-            reader.ReadArrayStart();
+            reader.ReadStartArray();
             var t1 = reader.ReadTupleFirstItem<T1>(options);
             var t2 = reader.ReadTupleNotFirsItem<T2>(options);
             var t3 = reader.ReadTupleNotFirsItem<T3>(options);
@@ -92,14 +92,14 @@ namespace Hexarc.Serialization.Tuple
             var t5 = reader.ReadTupleNotFirsItem<T5>(options);
             var t6 = reader.ReadTupleNotFirsItem<T6>(options);
             var t7 = reader.ReadTupleNotFirsItem<T7>(options);
-            reader.ReadArrayEnd();
+            reader.ReadEndArray();
             return new ValueTuple<T1, T2, T3, T4, T5, T6, T7>(t1, t2, t3, t4, t5, t6, t7);
         }
 
         public static ValueTuple<T1, T2, T3, T4, T5, T6, T7, TRest> ReadTuple<T1, T2, T3, T4, T5, T6, T7, TRest>(
             this ref Utf8JsonReader reader, JsonSerializerOptions options) where TRest : struct
         {
-            reader.ReadArrayStart();
+            reader.ReadStartArray();
             var t1 = reader.ReadTupleFirstItem<T1>(options);
             var t2 = reader.ReadTupleNotFirsItem<T2>(options);
             var t3 = reader.ReadTupleNotFirsItem<T3>(options);
@@ -108,7 +108,7 @@ namespace Hexarc.Serialization.Tuple
             var t6 = reader.ReadTupleNotFirsItem<T6>(options);
             var t7 = reader.ReadTupleNotFirsItem<T7>(options);
             var rest = reader.ReadRestTuple<TRest>(options);
-            reader.ReadArrayEnd();
+            reader.ReadEndArray();
             return new ValueTuple<T1, T2, T3, T4, T5, T6, T7, TRest>(t1, t2, t3, t4, t5, t6, t7, rest);
         }
 
@@ -299,13 +299,13 @@ namespace Hexarc.Serialization.Tuple
             return reader.ReadValue(typeToRead, options)!;
         }
 
-        private static void ReadArrayStart(this ref Utf8JsonReader reader)
+        private static void ReadStartArray(this ref Utf8JsonReader reader)
         {
             if (reader.TokenType != JsonTokenType.StartArray) throw new JsonException();
             _ = reader.Read();
         }
 
-        private static void ReadArrayEnd(this ref Utf8JsonReader reader)
+        private static void ReadEndArray(this ref Utf8JsonReader reader)
         {
             _ = reader.Read();
             if (reader.TokenType != JsonTokenType.EndArray) throw new JsonException();

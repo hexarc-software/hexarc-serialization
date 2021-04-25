@@ -7,7 +7,6 @@ namespace Hexarc.Serialization.Tests
 {
     public class TupleTests
     {
-
         [Test]
         public void ReadTupleT1()
         {
@@ -140,6 +139,141 @@ namespace Hexarc.Serialization.Tests
             var raw = "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]";
             var value = JsonSerializer.Deserialize<(Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32)>(raw, options);
             Console.WriteLine(value);
+        }
+
+        [Test]
+        public void WriteTupleT1()
+        {
+            var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
+            var value = new ValueTuple<Int32>(231);
+            var raw = JsonSerializer.Serialize(value, options);
+            Console.WriteLine(raw);
+        }
+
+        [Test]
+        public void WriteTupleT2()
+        {
+            var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
+            var value = (1, 2);
+            var raw = JsonSerializer.Serialize(value, options);
+            Console.WriteLine(raw);
+        }
+
+        [Test]
+        public void WriteTupleT3()
+        {
+            var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
+            var value = (1, 2, 3);
+            var raw = JsonSerializer.Serialize(value, options);
+            Console.WriteLine(raw);
+        }
+
+        [Test]
+        public void WriteTupleT4()
+        {
+            var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
+            var value = (1, 2, 3, 4);
+            var raw = JsonSerializer.Serialize(value, options);
+            Console.WriteLine(raw);
+        }
+
+        [Test]
+        public void WriteTupleT5()
+        {
+            var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
+            var value = (1, 2, 3, 4, 5);
+            var raw = JsonSerializer.Serialize(value, options);
+            Console.WriteLine(raw);
+        }
+
+        [Test]
+        public void WriteTupleT6()
+        {
+            var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
+            var value = (1, 2, 3, 4, 5, 6);
+            var raw = JsonSerializer.Serialize(value, options);
+            Console.WriteLine(raw);
+        }
+
+        [Test]
+        public void WriteTupleT7()
+        {
+            var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
+            var value = (1, 2, 3, 4, 5, 6, 7);
+            var raw = JsonSerializer.Serialize(value, options);
+            Console.WriteLine(raw);
+        }
+
+        [Test]
+        public void WriteTupleT8()
+        {
+            var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
+            var value = (1, 2, 3, 4, 5, 6, 7, 8);
+            var raw = JsonSerializer.Serialize(value, options);
+            Console.WriteLine(raw);
+        }
+
+        [Test]
+        public void WriteTupleT9()
+        {
+            var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
+            var value = (1, 2, 3, 4, 5, 6, 7, 8, 9);
+            var raw = JsonSerializer.Serialize(value, options);
+            Console.WriteLine(raw);
+        }
+
+        [Test]
+        public void WriteTupleT10()
+        {
+            var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
+            var value = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+            var raw = JsonSerializer.Serialize(value, options);
+            Console.WriteLine(raw);
+        }
+
+        [Test]
+        public void WriteTupleT11()
+        {
+            var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
+            var value = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
+            var raw = JsonSerializer.Serialize(value, options);
+            Console.WriteLine(raw);
+        }
+
+        [Test]
+        public void WriteTupleT12()
+        {
+            var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
+            var value = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+            var raw = JsonSerializer.Serialize(value, options);
+            Console.WriteLine(raw);
+        }
+
+        [Test]
+        public void WriteTupleT13()
+        {
+            var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
+            var value = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13);
+            var raw = JsonSerializer.Serialize(value, options);
+            Console.WriteLine(raw);
+        }
+
+        [Test]
+        public void WriteTupleT14()
+        {
+            var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
+            var value = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14);
+            var raw = JsonSerializer.Serialize(value, options);
+            Console.WriteLine(raw);
+        }
+
+        [Test]
+        public void WriteTupleT15()
+        {
+            var options = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
+            var value = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
+            var raw = JsonSerializer.Serialize(value, options);
+            Console.WriteLine(raw);
         }
     }
 }

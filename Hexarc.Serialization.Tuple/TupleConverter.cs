@@ -10,7 +10,7 @@ namespace Hexarc.Serialization.Tuple
             reader.ReadTuple<T1>(options);
 
         public override void Write(Utf8JsonWriter writer, ValueTuple<T1> value, JsonSerializerOptions options) =>
-            throw new NotImplementedException();
+            writer.WriteTuple(value, options);
     }
 
     public sealed class TupleConverter<T1, T2> : JsonConverter<ValueTuple<T1, T2>>
@@ -19,7 +19,7 @@ namespace Hexarc.Serialization.Tuple
             reader.ReadTuple<T1, T2>(options);
 
         public override void Write(Utf8JsonWriter writer, ValueTuple<T1, T2> value, JsonSerializerOptions options) =>
-            throw new NotImplementedException();
+            writer.WriteTuple(value, options);
     }
 
     public sealed class TupleConverter<T1, T2, T3> : JsonConverter<ValueTuple<T1, T2, T3>>
@@ -28,7 +28,7 @@ namespace Hexarc.Serialization.Tuple
             reader.ReadTuple<T1, T2, T3>(options);
 
         public override void Write(Utf8JsonWriter writer, ValueTuple<T1, T2, T3> value, JsonSerializerOptions options) =>
-            throw new NotImplementedException();
+            writer.WriteTuple(value, options);
     }
 
     public sealed class TupleConverter<T1, T2, T3, T4> : JsonConverter<ValueTuple<T1, T2, T3, T4>>
@@ -36,8 +36,8 @@ namespace Hexarc.Serialization.Tuple
         public override ValueTuple<T1, T2, T3, T4> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) =>
             reader.ReadTuple<T1, T2, T3, T4>(options);
 
-            public override void Write(Utf8JsonWriter writer, ValueTuple<T1, T2, T3, T4> value, JsonSerializerOptions options) =>
-            throw new NotImplementedException();
+        public override void Write(Utf8JsonWriter writer, ValueTuple<T1, T2, T3, T4> value, JsonSerializerOptions options) =>
+            writer.WriteTuple(value, options);
     }
 
     public sealed class TupleConverter<T1, T2, T3, T4, T5> : JsonConverter<ValueTuple<T1, T2, T3, T4, T5>>
@@ -46,7 +46,7 @@ namespace Hexarc.Serialization.Tuple
             reader.ReadTuple<T1, T2, T3, T4, T5>(options);
 
         public override void Write(Utf8JsonWriter writer, ValueTuple<T1, T2, T3, T4, T5> value, JsonSerializerOptions options) =>
-            throw new NotImplementedException();
+            writer.WriteTuple(value, options);
     }
 
     public sealed class TupleConverter<T1, T2, T3, T4, T5, T6> : JsonConverter<ValueTuple<T1, T2, T3, T4, T5, T6>>
@@ -55,7 +55,7 @@ namespace Hexarc.Serialization.Tuple
             reader.ReadTuple<T1, T2, T3, T4, T5, T6>(options);
 
         public override void Write(Utf8JsonWriter writer, ValueTuple<T1, T2, T3, T4, T5, T6> value, JsonSerializerOptions options) =>
-            throw new NotImplementedException();
+            writer.WriteTuple(value, options);
     }
 
     public sealed class TupleConverter<T1, T2, T3, T4, T5, T6, T7> : JsonConverter<ValueTuple<T1, T2, T3, T4, T5, T6, T7>>
@@ -64,7 +64,7 @@ namespace Hexarc.Serialization.Tuple
             reader.ReadTuple<T1, T2, T3, T4, T5, T6, T7>(options);
 
         public override void Write(Utf8JsonWriter writer, ValueTuple<T1, T2, T3, T4, T5, T6, T7> value, JsonSerializerOptions options) =>
-            throw new NotImplementedException();
+            writer.WriteTuple(value, options);
     }
 
     public sealed class TupleConverter<T1, T2, T3, T4, T5, T6, T7, TRest> : JsonConverter<ValueTuple<T1, T2, T3, T4, T5, T6, T7, TRest>> where TRest : struct
@@ -73,6 +73,6 @@ namespace Hexarc.Serialization.Tuple
             reader.ReadTuple<T1, T2, T3, T4, T5, T6, T7, TRest>(options);
 
         public override void Write(Utf8JsonWriter writer, ValueTuple<T1, T2, T3, T4, T5, T6, T7, TRest> value, JsonSerializerOptions options) =>
-            throw new NotImplementedException();
+            writer.WriteTuple<T1, T2, T3, T4, T5, T6, T7, TRest>(value, options);
     }
 }
