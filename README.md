@@ -1,12 +1,15 @@
-# Hexarc Serialization
+# Hexarc Serialization [![License](http://img.shields.io/:license-mit-blue.svg)](http://badges.mit-license.org)
 
 The Hexarc Serialization project provides additional converters for the `System.Text.Json` serializer.
 
-## Hexarc.Serialization.Union
+## Packages
 
-[![NuGet](https://img.shields.io/nuget/v/Hexarc.Serialization.Union.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Union)
-[![Downloads](http://img.shields.io/nuget/dt/Hexarc.Serialization.Union.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Union)
-[![License](http://img.shields.io/:license-mit-blue.svg)](http://badges.mit-license.org)
+|Package|Platform|Version|Downloads|
+|-------|--------|-------|---------|
+|`Hexarch.Serialization.Union`| .NET 5.0+ |[![NuGet](https://img.shields.io/nuget/v/Hexarc.Serialization.Union.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Union)|[![Downloads](http://img.shields.io/nuget/dt/Hexarc.Serialization.Union.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Union)|
+|`Hexarch.Serialization.Tuple`| .NET 5.0+ |[![NuGet](https://img.shields.io/nuget/v/Hexarc.Serialization.Tuple.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Tuple)|[![Downloads](http://img.shields.io/nuget/dt/Hexarc.Serialization.Tuple.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Tuple)|
+
+## Hexarc.Serialization.Union
 
 The `Hexarc.Serialization.Union` package helps to serialize .NET/C# classes hierarchy as a tagged union (also known as a discriminated union).
 
@@ -48,6 +51,20 @@ Console.Write((shape as Circle)!.Radius);
 ```
 
 Some technical details about the tagged union converter implementation can be found in [this article](https://shadeglare.medium.com/mimic-discriminating-union-types-in-c-with-serialization-via-system-text-json-3da67ef58dc0).
+
+## Hexarc.Serialization.Tuple
+
+The `Hexarc.Serialization.Union` package helps to serialize .NET/C# value tuple types.
+
+```c#
+var settings = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
+
+var point = (10, 20);
+Console.WriteLine(JsonSerializer.Serialize(point));
+
+var (x, y) = JsonSerializer.Deserialize<(Int32, Int32)>(@"[10, 20]");
+Console.Write($"Point coords: {x}, {y}");
+```
 
 
 
