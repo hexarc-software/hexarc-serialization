@@ -1,6 +1,6 @@
 #!/bin/sh
 source .env
-PACKAGE="Hexarc.Serialization.Tuple.1.0.0.nupkg"
+PACKAGE="Hexarc.Serialization.Tuple.2.0.0.nupkg"
 
 if [ -z $NUGET_API_KEY ]; then
   echo "No NUGET_API_KEY found in .env file";

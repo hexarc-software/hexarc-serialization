@@ -6,8 +6,8 @@ The Hexarc Serialization project provides additional converters for the `System.
 
 |Package|Platform|Version|Downloads|
 |-------|--------|-------|---------|
-|`Hexarch.Serialization.Union`| .NET 5.0+ |[![NuGet](https://img.shields.io/nuget/v/Hexarc.Serialization.Union.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Union)|[![Downloads](http://img.shields.io/nuget/dt/Hexarc.Serialization.Union.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Union)|
-|`Hexarch.Serialization.Tuple`| .NET 5.0+ |[![NuGet](https://img.shields.io/nuget/v/Hexarc.Serialization.Tuple.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Tuple)|[![Downloads](http://img.shields.io/nuget/dt/Hexarc.Serialization.Tuple.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Tuple)|
+|`Hexarch.Serialization.Union`| .NET 6.0+ |[![NuGet](https://img.shields.io/nuget/v/Hexarc.Serialization.Union.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Union)|[![Downloads](http://img.shields.io/nuget/dt/Hexarc.Serialization.Union.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Union)|
+|`Hexarch.Serialization.Tuple`| .NET 6.0+ |[![NuGet](https://img.shields.io/nuget/v/Hexarc.Serialization.Tuple.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Tuple)|[![Downloads](http://img.shields.io/nuget/dt/Hexarc.Serialization.Tuple.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Tuple)|
 
 ## Hexarc.Serialization.Union
 
