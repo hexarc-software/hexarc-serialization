@@ -1,4 +1,4 @@
-name: Publish Hexarc.Serialization.Union Package
+name: Publish Hexarc.Serialization.Tuple Package
 on:
   workflow_dispatch:
     inputs:
