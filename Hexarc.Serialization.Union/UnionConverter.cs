@@ -21,10 +21,11 @@ public sealed class UnionConverter<T> : JsonConverter<T> where T : class
     public override T? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         using var document = JsonDocument.ParseValue(ref reader);
+        var rootElement = document.RootElement;
         var propertyName = options.PropertyNamingPolicy?.ConvertName(this.TagPropertyName) ?? this.TagPropertyName;
-        var property = document.RootElement.GetProperty(propertyName);
+        var property = rootElement.GetProperty(propertyName);
         var type = this.UnionTypes[property.GetString() ?? throw new InvalidOperationException()];
-        return (T?)document.ToObject(type, options);
+        return (T?)rootElement.Deserialize(type, options);
     }
 
     public override void Write(Utf8JsonWriter writer, T value, JsonSerializerOptions options) =>

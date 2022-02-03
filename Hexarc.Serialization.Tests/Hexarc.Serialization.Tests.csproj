@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Hexarc.Serialization.Tuple\Hexarc.Serialization.Tuple.csproj" />
+    <ProjectReference Include="..\Hexarc.Serialization.Union\Hexarc.Serialization.Union.csproj" />
   </ItemGroup>
 
 </Project>
