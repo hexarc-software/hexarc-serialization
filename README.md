@@ -54,7 +54,7 @@ Some technical details about the tagged union converter implementation can be fo
 
 ## Hexarc.Serialization.Tuple
 
-The `Hexarc.Serialization.Union` package helps to serialize .NET/C# value tuple types.
+The `Hexarc.Serialization.Tuple` package helps to serialize .NET/C# value tuple types.
 
 ```c#
 var settings = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
