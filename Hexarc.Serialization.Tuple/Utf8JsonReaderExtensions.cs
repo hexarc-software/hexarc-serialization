@@ -129,7 +129,7 @@ internal static class Utf8JsonReaderExtensions
         };
     }
 
-    public static Object ReadTuple(
+    private static Object ReadTuple(
         this ref Utf8JsonReader reader,
         Type firstElementType,
         JsonSerializerOptions options)
@@ -140,7 +140,7 @@ internal static class Utf8JsonReaderExtensions
         return Activator.CreateInstance(concrete, t1)!;
     }
 
-    public static Object ReadTuple(
+    private static Object ReadTuple(
         this ref Utf8JsonReader reader,
         Type firstElementType,
         Type secondElementType,
@@ -153,7 +153,7 @@ internal static class Utf8JsonReaderExtensions
         return Activator.CreateInstance(concrete, t1, t2)!;
     }
 
-    public static Object ReadTuple(
+    private static Object ReadTuple(
         this ref Utf8JsonReader reader,
         Type firstElementType,
         Type secondElementType,
@@ -168,7 +168,7 @@ internal static class Utf8JsonReaderExtensions
         return Activator.CreateInstance(concrete, t1, t2, t3)!;
     }
 
-    public static Object ReadTuple(
+    private static Object ReadTuple(
         this ref Utf8JsonReader reader,
         Type firstElementType,
         Type secondElementType,
@@ -186,7 +186,7 @@ internal static class Utf8JsonReaderExtensions
         return Activator.CreateInstance(concrete, t1, t2, t3, t4)!;
     }
 
-    public static Object ReadTuple(
+    private static Object ReadTuple(
         this ref Utf8JsonReader reader,
         Type firstElementType,
         Type secondElementType,
@@ -206,7 +206,7 @@ internal static class Utf8JsonReaderExtensions
         return Activator.CreateInstance(concrete, t1, t2, t3, t4, t5)!;
     }
 
-    public static Object ReadTuple(
+    private static Object ReadTuple(
         this ref Utf8JsonReader reader,
         Type firstElementType,
         Type secondElementType,
@@ -229,7 +229,7 @@ internal static class Utf8JsonReaderExtensions
         return Activator.CreateInstance(concrete, t1, t2, t3, t4, t5, t6)!;
     }
 
-    public static Object ReadTuple(
+    private static Object ReadTuple(
         this ref Utf8JsonReader reader,
         Type firstElementType,
         Type secondElementType,
@@ -254,7 +254,7 @@ internal static class Utf8JsonReaderExtensions
         return Activator.CreateInstance(concrete, t1, t2, t3, t4, t5, t6, t7)!;
     }
 
-    public static Object ReadTuple(
+    private static Object ReadTuple(
         this ref Utf8JsonReader reader,
         Type firstElementType,
         Type secondElementType,

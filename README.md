@@ -1,13 +1,13 @@
-# Hexarc Serialization [![License](http://img.shields.io/:license-mit-blue.svg)](http://badges.mit-license.org)
+# Serialization for advanced .NET types [![License](http://img.shields.io/:license-mit-blue.svg)](http://badges.mit-license.org)
 
 The Hexarc Serialization project provides additional converters for the `System.Text.Json` serializer.
 
 ## Packages
 
-|Package|Platform|Version|Downloads|
-|-------|--------|-------|---------|
-|`Hexarch.Serialization.Union`| .NET 6.0+ |[![NuGet](https://img.shields.io/nuget/v/Hexarc.Serialization.Union.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Union)|[![Downloads](http://img.shields.io/nuget/dt/Hexarc.Serialization.Union.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Union)|
-|`Hexarch.Serialization.Tuple`| .NET 6.0+ |[![NuGet](https://img.shields.io/nuget/v/Hexarc.Serialization.Tuple.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Tuple)|[![Downloads](http://img.shields.io/nuget/dt/Hexarc.Serialization.Tuple.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Tuple)|
+|Package| Platform  |Version|Downloads|
+|-------|-----------|-------|---------|
+|`Hexarch.Serialization.Union`| .NET 7.0+ |[![NuGet](https://img.shields.io/nuget/v/Hexarc.Serialization.Union.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Union)|[![Downloads](http://img.shields.io/nuget/dt/Hexarc.Serialization.Union.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Union)|
+|`Hexarch.Serialization.Tuple`| .NET 7.0+ |[![NuGet](https://img.shields.io/nuget/v/Hexarc.Serialization.Tuple.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Tuple)|[![Downloads](http://img.shields.io/nuget/dt/Hexarc.Serialization.Tuple.svg)](https://www.nuget.org/packages/Hexarc.Serialization.Tuple)|
 
 ## Hexarc.Serialization.Union
 
@@ -26,13 +26,13 @@ public abstract class Shape
 public sealed class Circle : Shape
 {
     public override String Kind { get; } = nameof(Circle);
-    public Double Radius { get; set; } 
+    public required Double Radius { get; set; } 
 }
 
 public sealed class Square : Shape
 {
     public override String Kind { get; } = nameof(Square);
-    public Double Side { get; set; }
+    public required Double Side { get; set; }
 }
 ```
 
@@ -65,6 +65,14 @@ Console.WriteLine(JsonSerializer.Serialize(point));
 var (x, y) = JsonSerializer.Deserialize<(Int32, Int32)>(@"[10, 20]");
 Console.Write($"Point coords: {x}, {y}");
 ```
+
+## Acknowledgments
+Built with JetBrains tools for [Open Source](https://jb.gg/OpenSourceSupport) projects.
+
+![JetBrains Logo (Main) logo](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)
+
+## License
+MIT © [Hexarc Software and its contributors](https://github.com/hexarc-software)
 
 
 

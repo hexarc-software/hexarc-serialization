@@ -1,12 +1,10 @@
-using System;
 using System.Text.Json;
-using Hexarc.Annotations;
 using Hexarc.Serialization.Union;
 using NUnit.Framework;
 
 namespace Hexarc.Serialization.Tests;
 
-public class DuTests
+public sealed class DuTests
 {
     [Test]
     public void SerializeCircle()
@@ -61,7 +59,7 @@ public class DuTests
 }
 
 [UnionTag(nameof(Kind))]
-[UnionCase(typeof(Circle), nameof(Circle))]
+[UnionCase<Circle>(nameof(Circle))]
 [UnionCase(typeof(Square), nameof(Square))]
 public abstract class Figure
 {
@@ -72,12 +70,12 @@ public sealed class Circle : Figure
 {
     public override String Kind => nameof(Circle);
 
-    public Double Radius { get; init; }
+    public required Double Radius { get; init; }
 }
 
 public sealed class Square : Figure
 {
     public override String Kind => nameof(Square);
 
-    public Double SideLength { get; init; }
+    public required Double SideLength { get; init; }
 }

@@ -14,7 +14,7 @@ public sealed class UnionConverter<T> : JsonConverter<T> where T : class
 
         var concreteTypeFactory = type.CreateConcreteTypeFactory();
         this.TagPropertyName = unionTag.TagPropertyName;
-        this.UnionTypes = type.GetCustomAttributes<UnionCaseAttribute>()
+        this.UnionTypes = type.GetCustomAttributes<UnionCaseBaseAttribute>()
             .ToDictionary(k => k.TagPropertyValue, e => concreteTypeFactory(e.CaseType));
     }
 

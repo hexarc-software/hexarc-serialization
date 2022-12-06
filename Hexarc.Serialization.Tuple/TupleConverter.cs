@@ -69,5 +69,5 @@ public sealed class TupleConverter<T1, T2, T3, T4, T5, T6, T7, TRest> : JsonConv
         reader.ReadTuple<T1, T2, T3, T4, T5, T6, T7, TRest>(options);
 
     public override void Write(Utf8JsonWriter writer, ValueTuple<T1, T2, T3, T4, T5, T6, T7, TRest> value, JsonSerializerOptions options) =>
-        writer.WriteTuple<T1, T2, T3, T4, T5, T6, T7, TRest>(value, options);
+        writer.WriteTuple(value, options);
 }

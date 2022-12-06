@@ -1,17 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <Nullable>Enable</Nullable>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Hexarc.Annotations" Version="2.0.0" />
-  </ItemGroup>
-
+  
   <PropertyGroup>
     <PackageId>Hexarc.Serialization.Union</PackageId>
-    <Version>2.0.1</Version>
+    <Version>3.0.0</Version>
     <Authors>Max Koverdyaev</Authors>
     <Company>Hexarc Software</Company>
     <PackageTags>Tagged Union;Discriminated Union;Serialization;Json</PackageTags>
@@ -27,6 +24,10 @@
 
   <ItemGroup>
     <None Include="$(PackageIconFullPath)">
+      <PackagePath>\</PackagePath>
+      <Pack>true</Pack>
+    </None>
+    <None Include="../README.md">
       <PackagePath>\</PackagePath>
       <Pack>true</Pack>
     </None>

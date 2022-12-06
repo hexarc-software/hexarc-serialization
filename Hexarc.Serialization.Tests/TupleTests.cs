@@ -5,7 +5,7 @@ using System.Text.Json;
 using NUnit.Framework;
 using Hexarc.Serialization.Tuple;
 
-public class TupleTests
+public sealed class TupleTests
 {
     [Test]
     public void ReadTupleT1()
