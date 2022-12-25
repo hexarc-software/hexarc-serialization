@@ -1,4 +1,6 @@
-# Serialization for advanced .NET types [![License](http://img.shields.io/:license-mit-blue.svg)](http://badges.mit-license.org)
+# Serialization for advanced .NET types 
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://badges.mit-license.org)
+[![Donate Solana](https://img.shields.io/static/v1?label=Fondify.app&message=Donate%20%24SOL&color=blueviolet)](https://fondify.app/to/9qjvN4GZf78M2JsLUxXUNQWnDo96s12Zzzkzoo8cFpqw)
 
 The Hexarc Serialization project provides additional converters for the `System.Text.Json` serializer.
 
