@@ -46,9 +46,9 @@ marks a known subtype (or a case class) of the `Shape` class.
 var settings = new JsonSerializerOptions { Converters = { new UnionConverterFactory() } };
 
 var square = new Square { Side = 15.0 };
-Console.WriteLine(JsonSerializer.Serialize(square));
+Console.WriteLine(JsonSerializer.Serialize(square, settings));
 
-var shape = JsonSerializer.Deserialize<Shape>(@"{ ""Kind"": ""Circle"", ""Radius"": 10.0 }");
+var shape = JsonSerializer.Deserialize<Shape>(@"{ ""Kind"": ""Circle"", ""Radius"": 10.0 }", settings);
 Console.Write((shape as Circle)!.Radius);
 ```
 
@@ -62,9 +62,9 @@ The `Hexarc.Serialization.Tuple` package helps to serialize .NET/C# value tuple 
 var settings = new JsonSerializerOptions { Converters = { new TupleConverterFactory() } };
 
 var point = (10, 20);
-Console.WriteLine(JsonSerializer.Serialize(point));
+Console.WriteLine(JsonSerializer.Serialize(point, settings));
 
-var (x, y) = JsonSerializer.Deserialize<(Int32, Int32)>(@"[10, 20]");
+var (x, y) = JsonSerializer.Deserialize<(Int32, Int32)>(@"[10, 20]", settings);
 Console.Write($"Point coords: {x}, {y}");
 ```
 
